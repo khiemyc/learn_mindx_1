@@ -1,0 +1,4 @@
+Tính đóng gói (encapsulation) và che giấu thông tin (information hiding)
+Tính kế thừa (Inheritance)
+Tính đa hình (polymorphism)
+Tính trừu tượng (abstraction):
