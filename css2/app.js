@@ -160,7 +160,7 @@ class Boy extends Person {
     sex;
     strength;
     constructor(name, age, address,strength) {
-        super(name, age, address)
+          super(name, age, address)
         this.sex = 'male';
         this.strength = strength;
     }
@@ -182,7 +182,7 @@ class Girl extends Person {
 class GoodBoy extends Boy{
     poor;
     constructor(name,age,address,strength,poor){
-        super(name,age,address,strength)
+          super(name,age,address,strength)
         this.poor = poor
     }
 }
