@@ -1,0 +1,5 @@
+querySelector() trả về phần tử đầu tiên là phần tử con của phần tử mà nó được gọi ra khớp với nhóm bộ chọn được chỉ định.
+querySelectorAll() là phương thức JavaScript truy lục tất cả các phần tử trong tài liệu khớp với một bộ chọn CSS được chỉ định, 
+getElementById() sẽ trả về phần tử có thuộc tính ID được cung cấp.
+getElementsByClassName() trả về một tập hợp tất cả các phần tử trong tài liệu với tên lớp được chỉ định, giá trị trả về như một đối tượng NodeList.
+getElementsByTagName() trong JavaScript trả về tất cả phần tử của tên thẻ được chỉ định

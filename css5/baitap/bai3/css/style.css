@@ -1,0 +1,45 @@
+ .anime-content {
+            display: inline-block !important;
+            -webkit-box-shadow: 10px 6px 7px 0px rgba(0, 0, 0, 0.64);
+            -moz-box-shadow: 10px 6px 7px 0px rgba(0, 0, 0, 0.64);
+            box-shadow: 10px 6px 7px 0px rgba(0, 0, 0, 0.64);
+            width: 200px;
+            height: 500px;
+            border: 2px;
+            width: 200px;
+            height: 500px;
+            border: 2px;
+            margin: 7px;
+        }
+
+        span.category-name {
+            display: inline-block;
+            border: 1px solid;
+            padding: 1px;
+            font-family: system-ui;
+            margin: 2px;
+            font-size: 13px;
+        }
+
+        .name {
+            font-size: 17px;
+            font-family: sans-serif;
+            color: dodgerblue;
+            /* text-align: end; */
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            padding: 5px;
+            font-size: 21px;
+            font-family: sans-serif;
+            color: brown;
+            text-align: end;
+        }
+
+        .chapter {
+            padding: 5px;
+            font-family: sans-serif;
+            text-align: end;
+        }
