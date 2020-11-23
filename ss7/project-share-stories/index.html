@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAmtlbFh_WPuSNPp0wPs8Kh55Yd8zfu4Go",
+            authDomain: "ci52-c1a82.firebaseapp.com",
+            databaseURL: "https://ci52-c1a82.firebaseio.com",
+            projectId: "ci52-c1a82",
+            storageBucket: "ci52-c1a82.appspot.com",
+            messagingSenderId: "600240343974",
+            appId: "1:600240343974:web:8845944f21a8558f2e1d67"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <register-form></register-form>
+    <!-- <input-wrapper label="ten dang ky" type="text" error="nhap vao ten dang ky" value="buikhiem"></input-wrapper> -->
+</body>
+<template id="input-wrapper-template">
+    <link rel="stylesheet" href="./css/input-wrapper.css">
+    <div id="input-wrapper">
+        <input type="text" name="" id="input-main" placeholder="Main Input">
+        <div id="input-error"></div>
+    </div>
+</template>
+<template id="register-form-template">
+    <link rel="stylesheet" href="./css/register-form.css">
+    <form action="" id="register-form">
+        <h2>Dang ky tai khoan</h2>
+        <input-wrapper id="name" label="Ten Dang Ky" type="text"></input-wrapper>
+        <input-wrapper id="email" label="Email" type="email"></input-wrapper>
+        <input-wrapper id="password" label="Password" type="password"></input-wrapper>
+        <input-wrapper id="password-confim" label="Password confim" type="password"></input-wrapper>
+        <button id="register-button">Dang Ky</button>
+    </form>
+</template>
+<script src="./js/app.js" type="module"></script>
+
+</html>

@@ -1,0 +1,16 @@
+#register-button{
+    /* position: absolute; */
+width: 370px;
+height: 106px;
+left: 135px;
+top: 948px;
+background: #003B46;
+border-radius: 5px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 200;
+font-size: 55px;
+align-items: center;
+color: #C4DFE6;
+
+}

@@ -1,0 +1,28 @@
+#input-main{
+  font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 55px;
+    line-height: 64px;
+    display: flex;
+    align-items: center;
+    color: #003B46;
+    background: rgba(7, 87, 91, 0.15);
+    border-radius: 5px;
+    border: 1px solid;
+    padding-left: 35px;
+    outline: none;
+}
+#input-error {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    color: #FF0000;
+}
+#input-wrapper{
+  padding-bottom: 20px;
+}

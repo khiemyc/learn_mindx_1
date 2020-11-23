@@ -1,0 +1,35 @@
+- Y tơởng :
+    = tên đề tài: project-share-stories
+    = đối tượng: 18-60
+    = Chức năng:
+        - đăng ký
+        - đăng nâập
+        - xem các story
+        - tạo story
+        - react lại story của nguoi khác
+
+- Phân tích:
+    + dữịeiệu ( thực thể )
+        Usser( nguoi dungl): name, email, password
+        Story: content, dateModified, owner
+        React: reactor, story, reactType
+
+    + Chức năng: xác định chức năng tương tác người dùng như nào?
+        # Phân tích Đăng Ký: 
+            1. Bấm link đăng ký -> hiển thi form đăng Ký
+            2. người dùng nhập: nên đăng ký, email, password, password confirmation
+            3. Bấm nút "Register" :
+                Nếu nhập đủ thông tin:
+                    --> kiểm tra có email nào trùng không
+                    --> lưu người dùng 
+                Nếu không nhập đủ:
+                    --> in ra thông báo lỗi
+                Nếu password != passwordCònimation
+                    --> in ra thông báo lỗi
+- Thiết kết cho chức năng đăng ký:
+    - thiết kế giao dêện
+    - thiết kế thuật toán
+- cài đặt
+
+- webComponent
+    + input-warpper: label ( pale horder, type input, Error)
