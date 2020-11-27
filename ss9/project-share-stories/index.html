@@ -35,8 +35,9 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <register-form></register-form>
+<body id="body">
+    <!-- <register-form></register-form> -->
+    <!-- <login-form></login-form> -->
     <!-- <input-wrapper label="ten dang ky" type="text" error="nhap vao ten dang ky" value="buikhiem"></input-wrapper> -->
 </body>
 <template id="input-wrapper-template">
@@ -55,8 +56,21 @@
         <input-wrapper id="password" label="Password" type="password"></input-wrapper>
         <input-wrapper id="password-confim" label="Password confim" type="password"></input-wrapper>
         <button id="register-button">Dang Ky</button>
+        <a href="#/sign-in">Dang Nhap</a>
     </form>
 </template>
+<template id="login-form-template">
+    <link rel="stylesheet" href="./css/login-form.css">
+    <form action="" id="login-form">
+        <h2>Dang Nhap Tai Khoan</h2>
+        <input-wrapper id="email" label="Email" type="email"></input-wrapper>
+        <input-wrapper id="password" label="Mat Khau" type="password"></input-wrapper>
+        <button id="login-button">Dang Nhap</button>
+    </form>
+    <a href="#/sign-up">Dang ky</a>
+</template>
+<script src="//unpkg.com/navigo@6"></script>
 <script src="./js/app.js" type="module"></script>
+<script src="js/route.js" type="module"></script>
 
 </html>
