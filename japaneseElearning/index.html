@@ -6,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA8XXDoy1UXDoJe3Kj8_xncF1QqP_lYO_M",
+            authDomain: "jpan-55d2b.firebaseapp.com",
+            projectId: "jpan-55d2b",
+            storageBucket: "jpan-55d2b.appspot.com",
+            messagingSenderId: "614008891962",
+            appId: "1:614008891962:web:df5e821c9d8ae60ba3a303"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- 
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -25,7 +41,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-    </script>
+    </script> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -33,14 +49,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
         crossorigin="anonymous"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
-
 </head>
 
 <body id="body" style="margin: 0;">
-
+    <!-- <create-courses></create-courses> -->
     <!-- <nav-bar></nav-bar> -->
-    <story-container content="aaaa"></story-container>
+    <!-- <story-container content="aaaa"></story-container> -->
+    <!-- <content-home></content-home> -->
     <!-- <register-form></register-form> -->
     <!-- <login-form></login-form> -->
     <!-- <input-wrapper label="ten dang ky" type="text" error="nhap vao ten dang ky" value="buikhiem"></input-wrapper> -->
@@ -79,75 +94,70 @@
     <link rel="stylesheet" href="./css/navbar.css">
     <div id="navbar">
         <div id="brand">
-            <img src="./image/logo.jpg" alt="" id="brand-image">
-            <span id="brand-text">Share Stories</span>
+            <img src="./image/iconnhat.png" alt="" id="brand-image">
+            <span id="brand-text">Japanses Learning</span>
             <!-- <p id="brand-text">Share Stories</p> -->
+        </div>
+        <div id="current-user-info" class="nav">
+            <a href="#">Xem Khoa Hoc</a>
+            <a href="#" id="current-user-name">Thong tin</a>
+            <a href="#" id="logout">Dang Xuat</a>
+            <a href="#">➕ Tao khoa hoc</a>
         </div>
         <div id="menu" class="nav">
             <a href="#/sign-in">Login</a>
             <a href="#/sign-up">Sign up</a>
         </div>
-        <div id="current-user-info" class="nav">
-            <a href="#/create-story">➕ Tao Story</a>
-            <a href="#" id="current-user-name">xin chao Khiem</a>
-            <a href="#">Dang suat</a>
-        </div>
     </div>
 
 </template>
-<template id="story-container-template">
-    <link rel="stylesheet" href="./css/story-container.css">
-    <div id="story-container">
-        <div id="info">
-            <div id="owner">name</div>
-            <div id="date-modified">27/11/2020</div>
-        </div>
-        <div id="content">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente tenetur natus culpa quibusdam vero
-            officiis accusantium nam eius minus inventore?
-        </div>
-        <div id="reaction">
-            <button class="reaction-btn">👍</button>
-            <button class="reaction-btn">💜</button>
-            <button class="reaction-btn">😆</button>
-            <button class="reaction-btn">😭</button>
-            <button class="reaction-btn">😡</button>
-            <button class="reaction-btn">⛈</button>
-        </div>
-    </div>
-</template>
-<template id="story-list-template">
-    <div id="story-list">
-
-    </div>
-</template>
-<template id="create-story-form-template">
-    <link rel="stylesheet" href="./css/create-story-form.css">
-    <form id="create-story-form">
-        <textarea id="content" placeholder="ban dang nghi gi"></textarea>
-        <button>Dang</button>
+<template id="create-courses-template">
+    <select name="category" id="category-courses">
+        <option value="n1">N1</option>
+        <option value="n2">N2</option>
+        <option value="n3">N3</option>
+        <option value="n4">N4</option>
+        <option value="n4">N5</option>
+    </select>
+    <form id="create-description-course">
+        <input type="text" id="create-name-course" placeholder="Ten khoa hoc">
+        <input type="text" id="create-owner-course" placeholder="Ten tac gia">
+        <textarea id="create-description-content-course" placeholder="Mo ta khoa hoc"></textarea>
+        <input type="file" id="create-file-course">
     </form>
 </template>
+
 <template id="register-screen">
     <nav-bar></nav-bar>
     <register-form></register-form>
 </template>
+
 <template id="login-screen">
     <nav-bar></nav-bar>
     <login-form></login-form>
 </template>
-
-<template id="index-screen">
-
-    <nav-bar></nav-bar>
-    <story-list id="story-list"></story-list>
+<template id="menu-template">
+    <div id="menu-home">
+        <a href="">🏠</a>
+        <a href="#">Trang Chu</a>
+        <a href="#">Kho hoc</a>
+        <a href="#">Dang ky vip</a>
+    </div>
 </template>
-<template id="create-story-screen">
-    <nav-bar></nav-bar>
-    <create-story-form></create-story-form>
+<template id="content-home">
+    <img id="img-content-home" src="./image//trangchu.jpg" alt="" srcset="">
+    <h1 id="title-content-home">Hãy đến với Japan Elearning
+        nơi khởi nguồn mọi đam mê</h1>
+</template>
+<template id="index-screen">
+    <!-- <nav-bar></nav-bar> -->
+    <!-- <menu-home></menu-home> -->
+    <!-- <content-home></content-home> -->
+    <create-courses></create-courses>
 </template>
 <script src="//unpkg.com/navigo@6"></script>
 <script src="./js/app.js" type="module"></script>
 <script src="js/route.js" type="module"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
 
 </html>

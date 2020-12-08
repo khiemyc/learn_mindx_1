@@ -1,5 +1,5 @@
 const $template = document.getElementById('login-form-template')
-import { checkInputWrapperValue, makeAuth, md5, validateEmail, getDataFromDoc } from "../utils.js"
+import { checkInputWrapperValue, md5, validateEmail, makeAuth } from "../utils.js"
 class LoginForm extends HTMLElement {
     constructor() {
         super();
@@ -23,22 +23,22 @@ class LoginForm extends HTMLElement {
                 return value == ""
             }, "nhap vao mat khau")
             if (isPasster) {
-                let result = await firebase
+                let reuslt = await firebase
                     .firestore()
                     .collection('users')
                     .where('email', '==', email)
                     .where('password', '==', md5(password))
                     .get()
-                console.log(result)
-                if (result.empty) {
+                console.log(reuslt)
+                if (reuslt.empty) {
                     alert("Email hoac mat khau khong chinh xac")
                 } else {
-                    // alert("dang nhap thanh cong")
-                    makeAuth(getDataFromDoc(result.docs[0], ['password']))
-                    // makeAuth(getDataFromDoc(result.docs[0], ['password']))
-                    console.log(getDataFromDoc(result.docs[0], ['password']));
+                    // alert("dang nhap thanh cong"j)
+                    // window.location.href = "index.html"
+                    makeAuth({ name: reuslt.docs[0].data().name, id: reuslt.docs[0].id, email: reuslt.docs[0].data().email })
 
                     router.navigate("/index")
+
                 }
             }
         }

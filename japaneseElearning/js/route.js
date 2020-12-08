@@ -1,4 +1,5 @@
-import { auth } from './utils.js';
+console.log("day la router")
+
 var root = null;
 var useHash = true; // Defaults to: false
 // var hash = '#!'; // Defaults to: '#'
@@ -18,23 +19,14 @@ router.on('/sign-in', function () {
 router.notFound(function () {
     document.getElementById("body").innerHTML = `<h1>Trang khong ton tai</h1>`
 })
+router.on(function () {
+    // router.navigate("/sign-in")
+    document.getElementById("body").innerHTML = `<index-screen></index-screen>`
+}).resolve()
 
 router.on('/index', function () {
     // router.navigate("/sign-in")
-    document.getElementById("body").innerHTML = "<index-screen></index-screen>"
+    document.getElementById("body").innerHTML = `<index-screen></index-screen>`
 }).resolve()
-
-router.on('/create-story', function () {
-    document.getElementById("body").innerHTML = "<create-story-screen></create-story-screen>"
-}).resolve()
-
-window.onload = function () {
-    if (auth()) {
-        router.navigate('/index')
-    } else {
-        router.navigate('/sign-in')
-    }
-}
-
 
 window.router = router;

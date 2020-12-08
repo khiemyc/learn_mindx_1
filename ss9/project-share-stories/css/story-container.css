@@ -1,0 +1,33 @@
+#story-container{
+    width: 500px;
+    min-height: 200px;
+    background-color: #dbd9d9;
+    padding: 19px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1-px;
+    transition: box-shadow 0.3s;
+}
+#story-container:hover{
+     box-shadow: 5px 5px 10px gray;
+}
+#info{
+    display: flex;
+    justify-content: space-between;
+}
+#content{
+    display: flex;
+    justify-content: center;
+}
+#reaction{
+    display: flex;
+    justify-content: center;
+}
+#reaction .reaction-btn{
+    border:node;
+    font-size: 15px;
+    padding: 7px;
+    outline: none;
+}

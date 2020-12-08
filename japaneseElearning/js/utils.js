@@ -29,18 +29,20 @@ export function md5(string) {
     return CryptoJS.MD5(string).toString();
 }
 
-// save status user where login
 export function makeAuth(user) {
-    localStorage.setItem('current-user', JSON.stringify(user))
+    localStorage.setItem('current-user', JSON.stringify(user));
 }
-// check status user if true get info user
+export function removeAuth() {
+    localStorage.clear();
+}
 export function auth() {
-    if (localStorage.getItem('current-user') != "")
+    if (localStorage.getItem('current-user') != "") {
         return JSON.parse(localStorage.getItem('current-user'))
-    return false
+    }
+    return false;
 }
 
-//xu ly du lieu tra ve tu firebase 1 doc 
+//xu ly du lieu tra ve tu firebase 
 export function getDataFromDoc(doc, excepts = []) {
     let result = doc.data();
     result.id = doc.id;
@@ -49,11 +51,4 @@ export function getDataFromDoc(doc, excepts = []) {
         delete result[except]
     }
     return result;
-}
-// xu ly du lieu tu nhieu doc
-
-export function getDataFromDocs(docs, except = []) {
-    return docs.map(function (doc) {
-        return getDataFromDoc(doc, except)
-    })
 }
