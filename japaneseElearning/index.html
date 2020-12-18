@@ -11,6 +11,8 @@
 
     <!-- <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -26,6 +28,10 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        // var storage = firebase.storage();
+        // var storage = firebase.app().storage("");
+
+
     </script>
     <!-- 
     <script>
@@ -99,10 +105,10 @@
             <!-- <p id="brand-text">Share Stories</p> -->
         </div>
         <div id="current-user-info" class="nav">
-            <a href="#">Xem Khoa Hoc</a>
+            <a href="#/course">Xem Khoa Hoc</a>
             <a href="#" id="current-user-name">Thong tin</a>
             <a href="#" id="logout">Dang Xuat</a>
-            <a href="#">➕ Tao khoa hoc</a>
+            <a href="#/create-course" id="createCourse">➕ Tao khoa hoc</a>
         </div>
         <div id="menu" class="nav">
             <a href="#/sign-in">Login</a>
@@ -112,19 +118,106 @@
 
 </template>
 <template id="create-courses-template">
-    <select name="category" id="category-courses">
-        <option value="n1">N1</option>
-        <option value="n2">N2</option>
-        <option value="n3">N3</option>
-        <option value="n4">N4</option>
-        <option value="n4">N5</option>
-    </select>
-    <form id="create-description-course">
-        <input type="text" id="create-name-course" placeholder="Ten khoa hoc">
+
+    <form id="create_description_course">
+        <select name="category" id="category-courses">
+            <option value="n1">N1</option>
+            <option value="n2">N2</option>
+            <option value="n3">N3</option>
+            <option value="n4">N4</option>
+            <option value="n5">N5</option>
+        </select>
+        <input type="text" id="create-name-course" placeholder="Ten bai hoc">
         <input type="text" id="create-owner-course" placeholder="Ten tac gia">
         <textarea id="create-description-content-course" placeholder="Mo ta khoa hoc"></textarea>
         <input type="file" id="create-file-course">
+        <button id="create-course-button">Create</button>
     </form>
+    <div id="process">
+
+    </div>
+</template>
+<template id="menu-template">
+    <div id="menu-home">
+        <a href="#/">🏠</a>
+        <a href="#/">Trang Chu</a>
+        <!-- <a href="#">Kho hoc</a> -->
+        <a href="#/register-course">Dang ky vip</a>
+    </div>
+</template>
+<template id="list-template">
+    <a href="" id="list-href"></a>
+</template>
+<template id="course_list_template">
+
+    <div id="list-a">
+
+    </div>
+    <!-- <div>
+        
+    </div> -->
+    <!-- <div>
+        <a href="#/n2">N2</a>
+    </div>
+    <div>
+        <a href="#/n3">N3</a>
+    </div>
+    <div>
+        <a href="#/n4">N4</a>
+    </div>
+    <div>
+        <a href="#/n5">N5</a>
+    </div> -->
+</template>
+<template id="course-register-template">
+    <div id="course-register">
+
+        <div id="name-course-register">
+
+        </div>
+        <button id="register-course">Dang ky hoc</button>
+        <button id="cancel-register-course">Huy Dang Ky</button>
+    </div>
+</template>
+<template id="lessons-container-template">
+    <div id="lessons">
+        <div id="course-chapter" class="course-container"
+            video="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" name="" href="#/">
+            video1</div>
+    </div>
+</template>
+<template id="lessons-list-template">
+    <!--    <link rel="stylesheet" href="">-->
+    <div id="lessons-list">
+
+    </div>
+    <div id="video-lessons">
+        <!-- <iframe width="420" id="source-video" height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+
+        </iframe> -->
+        <!-- <iframe width="1280" height="720" id="source-video"
+            src="https://www.youtube.com/watch?v=81zcEl808Qw&amp;list=PLxsPK4iaQfIO1FinIL36UXU5nesojzgP6&amp;index=2"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""></iframe> -->
+        <!-- <iframe width="1280" height="720" id="source-video"
+            src="https://www.youtube.com/embed/81zcEl808Qw?list=PLxsPK4iaQfIO1FinIL36UXU5nesojzgP6" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> -->
+        <video width="320" height="240" id="video" controls autoplay>
+            <source id="source-video" src="" type="video/mp4">
+        </video>
+        <div id="category"></div>
+        <div id="description"></div>
+        <div id="owner"></div>
+    </div>
+</template>
+
+<template id="course_screens">
+    <nav-bar></nav-bar>
+    <menu-home></menu-home>
+    <course-list></course-list>
 </template>
 
 <template id="register-screen">
@@ -136,23 +229,42 @@
     <nav-bar></nav-bar>
     <login-form></login-form>
 </template>
-<template id="menu-template">
-    <div id="menu-home">
-        <a href="">🏠</a>
-        <a href="#">Trang Chu</a>
-        <a href="#">Kho hoc</a>
-        <a href="#">Dang ky vip</a>
-    </div>
-</template>
+
 <template id="content-home">
     <img id="img-content-home" src="./image//trangchu.jpg" alt="" srcset="">
     <h1 id="title-content-home">Hãy đến với Japan Elearning
         nơi khởi nguồn mọi đam mê</h1>
 </template>
+<template id="register-course-screen">
+    <nav-bar></nav-bar>
+    <menu-home></menu-home>
+    <register-course name="n1"></register-course>
+    <register-course name="n2"></register-course>
+    <register-course name="n3"></register-course>
+    <register-course name="n4"></register-course>
+    <register-course name="n5"></register-course>
+
+</template>
+
 <template id="index-screen">
-    <!-- <nav-bar></nav-bar> -->
-    <!-- <menu-home></menu-home> -->
-    <!-- <content-home></content-home> -->
+    <nav-bar></nav-bar>
+    <menu-home></menu-home>
+    <content-home></content-home>
+
+    <!-- <register-screen-course></register-screen-course> -->
+
+    <!--    <lesson-container name="bai so 1" link-video="khiem" owner="tac gia" category="n1" description="mo ta"></lesson-container>-->
+    <!--    <lesson-container name="bai so 2" link-video="khiem" owner="tac gia" category="n1" description="mo ta"></lesson-container>-->
+    <!--    <lesson-container name="bai so 3" link-video="khiem" owner="tac gia" category="n1" description="mo ta"></lesson-container>-->
+    <!--<lesson-container></lesson-container>-->
+    <!-- <lesson-list></lesson-list> -->
+</template>
+<template id="register-course-script">
+
+</template>
+<template id="create-course-screen">
+    <nav-bar></nav-bar>
+    <menu-home></menu-home>
     <create-courses></create-courses>
 </template>
 <script src="//unpkg.com/navigo@6"></script>

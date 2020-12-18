@@ -29,4 +29,35 @@ router.on('/index', function () {
     document.getElementById("body").innerHTML = `<index-screen></index-screen>`
 }).resolve()
 
+router.on('/create-course', function () {
+    // router.navigate("/sign-in")
+    document.getElementById("body").innerHTML = `<create-course-screen></create-course-screen>`
+}).resolve()
+router.on('/course', function () {
+    // router.navigate("/sign-in")
+    document.getElementById("body").innerHTML = `<course-screen></course-screen>`
+}).resolve()
+router.on('/course/', function () {
+    // router.navigate("/sign-in")
+    document.getElementById("body").innerHTML = `<course-screen></course-screen>`
+}).resolve()
+router.on('/register-course', function () {
+    // router.navigate("/sign-in")
+    document.getElementById("body").innerHTML = `<register-screen-course></register-screen-course>`
+}).resolve()
+router.on('/n1', function () {
+    document.getElementById("body").innerHTML = "<lesson-list course='n1'></lesson-list>"
+}).resolve()
+router.on('/n2', function () {
+    document.getElementById("body").innerHTML = "<lesson-list course='n2'></lesson-list>"
+}).resolve()
+router.on('/n3', function () {
+    document.getElementById("body").innerHTML = "<lesson-list course='n3'></lesson-list>"
+}).resolve()
+router.on('/n4', function () {
+    document.getElementById("body").innerHTML = "<lesson-list course='n4'></lesson-list>"
+}).resolve()
+router.on('/n5', function () {
+    document.getElementById("body").innerHTML = "<lesson-list course='n5'></lesson-list>"
+}).resolve()
 window.router = router;

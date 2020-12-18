@@ -35,7 +35,9 @@ class LoginForm extends HTMLElement {
                 } else {
                     // alert("dang nhap thanh cong"j)
                     // window.location.href = "index.html"
-                    makeAuth({ name: reuslt.docs[0].data().name, id: reuslt.docs[0].id, email: reuslt.docs[0].data().email })
+                    makeAuth({
+                        name: reuslt.docs[0].data().name, id: reuslt.docs[0].id, email: reuslt.docs[0].data().email, isAdmin: reuslt.docs[0].data().isAdmin
+                    })
 
                     router.navigate("/index")
 

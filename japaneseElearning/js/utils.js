@@ -52,3 +52,10 @@ export function getDataFromDoc(doc, excepts = []) {
     }
     return result;
 }
+
+
+export function getDataFromDocs(docs, except = []) {
+    return docs.map(function (doc) {
+        return getDataFromDoc(doc, except)
+    })
+}
